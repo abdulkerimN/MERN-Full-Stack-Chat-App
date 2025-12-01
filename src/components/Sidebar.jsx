@@ -26,6 +26,10 @@ const Sidebar = ({selectedUser,setSelectedUser}) => {
             </div>
           </div>
         </div>
+
+        <div>
+          <img src={assets.search_icon} alt="search" className='w-3' />
+        </div>
       </div>
     </div>
   );
