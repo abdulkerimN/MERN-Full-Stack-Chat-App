@@ -1,8 +1,8 @@
-import React, { use } from 'react'
-import assets from '../assets/assets'
-import { useNavigate } from 'react-router-dom'
-const Sidebar = ({selectedUser,setSelectedUser}) => {
-      const navigate = useNavigate();
+import React, { use } from "react";
+import assets, { userDummyData } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
+const Sidebar = ({ selectedUser, setSelectedUser }) => {
+  const navigate = useNavigate();
   return (
     <div
       className={`bg-[#8185B2]/10 h-full p-5 rounded-r-xl overflow-y-scroll text-white ${
@@ -40,8 +40,16 @@ const Sidebar = ({selectedUser,setSelectedUser}) => {
           />
         </div>
       </div>
+
+      <div className="flex flex-col">
+        {userDummyData.map((user,index)=>(
+          <div>
+            <img src={user?.profilePic || assets.avatar_icon} alt="" className="w-[35px] aspect-[1/1] rounded-full" />
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export default Sidebar
+export default Sidebar;
