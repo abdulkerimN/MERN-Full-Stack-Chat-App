@@ -43,7 +43,7 @@ const Sidebar = ({ selectedUser, setSelectedUser }) => {
 
       <div className="flex flex-col">
         {userDummyData.map((user, index) => (
-          <div>
+          <div className={ `relative flex items-center gap-2 p-2 pl-4 rounded cursor-pointer max-sm:text-sm`}>
             <img
               src={user?.profilePic || assets.avatar_icon}
               alt=""
