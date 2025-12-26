@@ -1,7 +1,7 @@
 import React from 'react'
 import assets from '../assets/assets';
 const ChatContainer = ({selectedUser,setSelectedUser}) => {
-  return (
+  return selectedUser ? (
     <div className="h-full overflow-scroll relative backdrop-blur-lg">
       <div className="flex items-center gap-3 py-3 mx-4  border-b border-stone-500">
         <img src={assets.profile_martin} alt="" className="w-8 rounded-full" />
@@ -17,13 +17,17 @@ const ChatContainer = ({selectedUser,setSelectedUser}) => {
         />
         <img
           onClick={() => setSelectedUser(null)}
-          src={assets.arrow_icon}
+          src={assets.help_icon}
           alt=""
-          className="md:hidden max-w-7"
+          className="max-md:hidden max-w-5"
         />
       </div>
     </div>
-  );
+  ):(<div>
+      <img src={assets.logo_icon} className='max-w-16' alt="" />
+      <p>Chat anytime,anywhere</p>
+      </div>
+  )
 }
 
 export default ChatContainer
