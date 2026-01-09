@@ -3,14 +3,14 @@ import assets from "../assets/assets";
 
 const ChatContainer = ({ selectedUser, setSelectedUser }) => {
   return (
-    <div className="flex-1 h-full relative backdrop-blur-lg">
+    <div className="flex-1 h-full relative backdrop-blur-lg bg-white/5">
       {selectedUser ? (
         <div className="h-full overflow-y-scroll">
-          {/* Chat Header */}
-          <div className="flex items-center gap-3 py-3 mx-4 border-b border-stone-500">
+          {/* Header */}
+          <div className="flex items-center gap-3 py-3 px-4 border-b border-stone-500">
             <img
               src={assets.profile_martin}
-              alt=""
+              alt="profile"
               className="w-8 rounded-full"
             />
 
@@ -33,13 +33,13 @@ const ChatContainer = ({ selectedUser, setSelectedUser }) => {
             />
           </div>
 
-          {/* Messages will go here */}
+          {/* Messages go here */}
         </div>
       ) : (
-        /* Empty State */
-        <div className="flex h-full flex-col items-center justify-center gap-2 text-gray-500 bg-white/10">
-          <img src={assets.logo_icon} className="w-16" alt="" />
-          <p className="text-lg font-medium text-white">
+        /* EMPTY STATE */
+        <div className="h-full w-full flex flex-col items-center justify-center gap-3">
+          <img src={assets.logo_icon} alt="logo" className="w-20 opacity-90" />
+          <p className="text-xl font-medium text-white">
             Chat anytime, Anywhere
           </p>
         </div>
